@@ -46,32 +46,7 @@ def organize_copied_text(text: str) -> str:
     
     return cleaned_text
 
-def format_cleaned_text(text: str) -> str:
-    """
-    Formats the cleaned text into a more organized, readable format.
-    This implementation uses simple heuristics:
-      - Lines that are short (under 50 characters) and do not end with punctuation are treated as headings.
-      - All other lines are prefixed with a bullet point.
-    
-    Parameters:
-        text (str): The cleaned text to format.
 
-    Returns:
-        str: The formatted text with headings and bullet points.
-    """
-    lines = text.split("\n")
-    formatted_lines = []
-    for line in lines:
-        line = line.strip()
-        if not line:
-            continue
-        # If the line is short and doesn't end with punctuation, treat it as a heading
-        if len(line) < 50 and (line[-1] not in '.?!'):
-            formatted_lines.append(f"### {line}")
-        else:
-            formatted_lines.append(f"- {line}")
-    
-    return "\n\n".join(formatted_lines)
 
 
 

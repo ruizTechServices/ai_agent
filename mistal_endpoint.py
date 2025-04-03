@@ -1,8 +1,11 @@
+# mistral_endpoint.py
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 from mistralai import Mistral
 
-api_key = os.environ.get('MISTRAL_API_KEY') or 'fYyxtXD3JtccTu6iGz6V2W4I3N3bg8w1'
+api_key = os.environ.get('MISTRAL_API_KEY')
 model = "mistral-large-latest"
 
 client = Mistral(api_key=api_key)
